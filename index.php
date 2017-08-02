@@ -19,6 +19,7 @@
         <form>
             <div class="container">
                 <h1>Write address(each on line) and you get number of server response.</h1>
+                <div id="response"></div>
                 <div class="form-group">
                     <label for="address">Area for addresses www(response in format address -> number of response redirect if is any):</label>
                     <textarea class="form-control" rows="10" id="address"></textarea>
@@ -48,8 +49,7 @@
                             urls: urls,
                         },
                         success: (ret) => {
-                            $('#address').val('');
-                            $('#address').val(ret = ret.replace(/\\n/g, String.fromCharCode(13, 10) ));
+                            $('#response').html(ret);
                         },
                         error: (jqXHR, errorText, errorThrown) => {
                             alert('error, try again.');

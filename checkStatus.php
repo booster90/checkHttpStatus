@@ -3,7 +3,7 @@
 if (isset($_POST['urls']) && !empty($_POST['urls'])) {
     $response = new CheckStatusHttp($_POST['urls']);
     foreach ($response->getStatus() as $status) {
-        echo $status . '\\n';
+        echo $status . '<br>';
     }
     
 } else {
